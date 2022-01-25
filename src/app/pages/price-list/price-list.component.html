@@ -1,0 +1,40 @@
+<div class="app-price-wrapper">
+    <div class="app-price-wrapper__fns">
+        <div class="app-price-wrapper__fns--search">
+            <input  type="text" 
+                    placeholder="priceList Name Search"
+                    required="required"
+                    (input)="onInputChange($event);" 
+                    [(ngModel)]="priceListName" 
+                    />
+        </div>
+    </div>
+
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>extErpPriceListId</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr *ngFor="let el of priceListArr">
+            <td>{{ el.priceListID }}</td>
+            <td>{{ el.priceListName }}</td>
+            <td>{{ el.extErpPriceListID }}</td>
+            <td><button (click)="onEdit(el)">Edit</button></td>
+        </tr>
+
+    </table>
+
+</div>
+
+<app-shared-modal *ngIf="editModalOpen"  (outClose)="editModalOpen=$event" >
+    <app-price-list-edit    
+        [priceListArr]="priceListArr" 
+        [priceListItem]="priceListItemEdit" 
+        (outClose)="editModalOpen=$event"
+        (onSaveEdit)="onEditSave($event)"
+        ></app-price-list-edit>
+</app-shared-modal>

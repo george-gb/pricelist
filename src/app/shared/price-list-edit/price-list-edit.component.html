@@ -1,0 +1,48 @@
+
+<div class="list-edit-modal-box-body">
+
+            <div class="list-edit-modal-box-body--title">
+                priceListID
+            </div>
+            <input  type="text" 
+                [disabled]="true"
+                (input)="onInputChange('priceListID');" 
+                name="priceListID"
+                [(ngModel)]="editItem.priceListID" 
+            />
+            <div class="list-edit-modal-box-body--title">
+                priceListName *
+            </div>
+            <input  type="text" 
+                (input)="onInputChange('priceListName');" 
+                name="priceListName"
+                maxlength="10"
+                [(ngModel)]="editItem.priceListName" 
+            />
+            <div *ngIf="error.length" class="list-edit-modal-box-error">
+                <div *ngFor="let e of error">
+                    {{ e['priceListName'] }}
+                </div>
+            </div>
+            <div class="list-edit-modal-box-body--title">
+                extErpPriceListID
+            </div>
+            <input  type="text" 
+                required="required"
+                (input)="onInputChange('extErpPriceListID');" 
+                name="extErpPriceListID"
+                [(ngModel)]="editItem.extErpPriceListID" 
+            />
+            <div *ngIf="error.length" class="list-edit-modal-box-error">
+                <div *ngFor="let e of error">
+                    {{ e['extErpPriceListID'] }}
+                </div>
+            </div>
+
+    <div class="list-edit-modal-box-btns">
+        <button (click)="outClose.emit(false)">Discard</button>
+        <button (click)="save()" [disabled]="this.error.length">Save</button>
+    </div>
+
+
+</div>

@@ -1,0 +1,15 @@
+<div class="shared-modal">
+    <div class="shared-modal-background" (click)="outClose.emit(false)"></div>
+    <div class="shared-modal-box" [ngStyle]="{'width': width, 'height': height, 'max-width': maxWidth}" >
+        <div class="shared-modal-box-header">
+                <div class="">
+                    {{ title }}
+                </div>
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/macos-close.png" style="cursor: pointer;" (click)="outClose.emit(false)"/>
+        </div>
+            <div class="shared-modal-box-body">
+                <ng-content></ng-content>
+            </div>
+            
+    </div>
+</div>

@@ -1,0 +1,37 @@
+.list-edit-modal-box {
+    &-body {
+        padding: 20px 40px;
+        display: flex;
+        flex-direction: column;
+        &--title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    }
+    &-btns {
+        margin: 20px;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            margin-left: 25px;
+            height: 30px;
+            border-radius: 7px;
+            border-width: 1px;
+            min-width: 70px;
+            cursor: pointer;
+        }
+    }
+    &-error {
+        color: red;
+        font-size: 13px;
+    }
+}
+
+::ng-deep {
+    input {
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        padding-left: 10px;
+    }
+}

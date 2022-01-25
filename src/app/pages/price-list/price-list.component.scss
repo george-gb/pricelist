@@ -1,0 +1,51 @@
+.app-price-wrapper {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__fns {
+        display: flex;
+        margin-bottom: 20px;
+        &--search {
+            display: flex;
+            button {
+                margin: 0 10px;
+                padding: 3px;
+            }
+        }
+    }
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    button {
+        cursor: pointer;
+    }
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:not(:first-child):hover {
+    background-color: rgb(191, 250, 152);
+    cursor: pointer;
+}
+
+::ng-deep {
+    input {
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        padding-left: 10px;
+    }
+}

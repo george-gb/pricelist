@@ -1,0 +1,59 @@
+.shared-modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-content: center;
+    height: auto;
+    top: 0px;
+    padding: 40px;
+    left: 0px;
+    right: 0px;
+    height: auto;
+    min-height: 100%;
+    z-index: 120;
+    overflow-y: auto;
+    &-background {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: rgba(16, 16, 16, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 121;
+    }
+
+    &-box {
+        position: relative;
+        min-width: 200px;
+        min-height: 200px;
+        border-radius: 8px;
+        animation: modal-appear 0.3s ease-in-out;
+        margin: 0 auto;
+        background: white;
+        z-index: 121;
+        overflow: hidden;
+
+        &-header {
+            height: 66px;
+            padding-left: 28px;
+            padding-right: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+        &-body {
+            padding: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            &--title {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
